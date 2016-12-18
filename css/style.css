@@ -1,0 +1,454 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+	scroll-behavior: smooth;
+	cursor: url(../images/hammer.png), default;
+}
+
+@font-face {
+  font-family: 'Avengers';
+  font-style: normal;
+  font-weight: normal;
+  src: local('AVENGEANCE HEROIC AVENGER'), url(../fonts/AVENGEANCE.otf) format('opentype');
+}
+
+.wrapper{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-image: url("../images/wall.jpg");
+	background-size: cover;
+}
+
+.home_wrapper{
+	height: 100vh;
+}
+
+.home_wrapper_body{
+	padding: 20px;
+	height: 100vh;
+	background-color: rgba(44,62,80,0.8);
+}
+
+.shield_logo{
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	top: 100px;
+	width: 200px;
+	height: 200px;
+	background-image: url("../images/shield_logo.png");
+	background-size: cover;
+}
+
+.shield{
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	top: 150px;
+	width: 200px;
+	text-align: center;
+	font-size: 24px;
+	letter-spacing: 5px;
+	color: white;
+}
+
+.avengers_logo{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 80px;
+	padding: 20px;
+	font-family: 'Avengers';
+	font-size: 32px;
+	letter-spacing: 5px;
+	color: white;
+}
+
+.godina{
+	position: fixed;
+	bottom: 0;
+	left: calc(50vw - 100px);
+	height: 80px;
+	padding: 20px;
+	font-family: 'Avengers';
+	font-size: 32px;
+	letter-spacing: 5px;
+	color: white;
+}
+
+.autor{
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	height: 80px;
+	padding: 20px;
+	font-family: 'Avengers';
+	font-size: 32px;
+	letter-spacing: 5px;
+	color: white;
+}
+
+.menu_wrapper{
+	width: 100%;
+	height: 100vh;
+	text-align: left;
+	font-family: 'Avengers';
+	font-size: 24px;
+	padding: 20px;
+	letter-spacing: 10px;
+	background-color: rgba(44,62,80,0.8);
+	color: white;
+}
+
+.menu_pane{
+	padding: 10px;
+	text-align: left;
+}
+
+.team_name{
+	width: 200px;
+	font-size: 28px;
+	background-color: transparent;
+	border: none;
+	border-bottom: 2px solid white;
+	letter-spacing: 5px;
+	color: white;
+	text-align: center;
+}
+
+.input_file_status{
+	font-family: Arial, sanas-serif;
+}
+
+.game_wrapper{
+	height: 100vh;
+	font-family: 'Avengers';
+	font-size: 24px;
+	padding: 20px;
+	letter-spacing: 5px;
+	background-color: rgba(44,62,80,0.8);
+}
+
+.game_heading{
+	color: white;
+	width: 100%;
+	padding: 10px;
+	text-align: center;
+}
+
+.game_left{
+	border-right: 2px solid rgba(255,255,255,0.2);
+	color: white;
+}
+
+.line_team1{
+	width: 100%;
+  	height: 100%;
+  	border-spacing: 10px;
+  	border-collapse: separate;
+  	padding: 5px;
+  	border: 2px solid rgba(255,255,255,0.2);
+}
+
+.line_team2{
+	width: 100%;
+  	height: 100%;
+  	border-spacing: 10px;
+  	border-collapse: separate;
+  	padding: 5px;
+  	border: 2px solid rgba(255,255,255,0.2);
+}
+
+.line_team3{
+	width: 100%;
+  	height: 100%;
+  	border-spacing: 10px;
+  	border-collapse: separate;
+  	padding: 5px;
+  	border: 2px solid rgba(255,255,255,0.2);
+}
+
+td{
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+td:nth-child(10n + 10){
+	border: 2px solid rgba(255,255,255,0.2);
+}
+
+.bottom_game_buttons{
+	text-align: center;
+	padding: 20px;
+}
+
+.top_game_buttons{
+	text-align: center;
+	padding: 20px;
+	position: fixed;
+	top: 120px;
+	right: 0;
+}
+
+.boss_div{
+	width: 100px;
+	height: 100px;
+	background-color: transparent;
+	border: 2px solid #3498DB;
+	border-radius: 100%;
+	box-shadow: 0 0 30px #3498DB;
+	position: fixed;
+	top: 30px;
+	right: 100px;
+	z-index: 50;
+	background-image: url("../images/fury.png");
+	background-size: cover;
+	z-index: 60;
+}
+
+.change_points_wrapper{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(44,62,80,0.9);
+	padding: 150px;
+	color: white;
+	text-align: center;
+	z-index: 50;
+	display: none;
+}
+
+.zadatak_wrapper{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(44,62,80,0.9);
+	padding: 20px;
+	display: none;
+}
+
+.countdown{
+	position: fixed;
+	top: 35px;
+	left: calc(50vw - 45px);
+}
+
+.zadatak_div{
+	position: relative;
+	top: 120px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 800px;
+	height: 350px;
+	background-color: white;
+	padding: 20px;
+	border-radius: 10px;
+}
+
+.zadatak_text{
+	font-family: Arial, sanas-serif;
+	padding: 20px;
+	border: 2px solid black;
+	border-radius: 10px;
+	height: 100%;
+}
+
+.team_on_turn_div{
+	width: 100px;
+	height: 100px;
+	background-color: transparent;
+	border: 2px solid #3498DB;
+	border-radius: 100%;
+	box-shadow: 0 0 30px #3498DB;
+	position: fixed;
+	top: 30px;
+	left: 100px;
+	z-index: 100;
+	background-size: cover;
+}
+
+.team_on_turn_name{
+	width: 100px;
+	height: 100px;
+	background-color: transparent;
+	color: white;
+	position: fixed;
+	top: 60px;
+	left: 220px;
+	font-family: Avengers;
+	z-index: 50;
+}
+
+.resenje_div{
+	position: relative;
+	top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 800px;
+	height: 100px;
+	background-color: white;
+	padding: 20px;
+	border-radius: 10px;
+	font-family: Arial, sanas-serif;
+	padding: 10px;
+	text-align: center;
+}
+
+.input_odgovor{
+	width: 200px;
+	font-size: 28px;
+	background-color: transparent;
+	border: none;
+	border-bottom: 2px solid gray;
+	letter-spacing: 5px;
+	color: gray;
+	text-align: center;
+}
+
+.modal{
+	font-size: 32px;
+	text-align: center;
+}
+
+.biraj_zadatak_wrapper{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(44,62,80,0.9);
+	color: white;
+	text-align: center;
+	padding: 20px;
+	font-family: Arial, sanas-serif;
+	display: none;
+}
+
+.choose_button_blue{
+	font-family: 'Arial';
+	font-size: 20px;
+	border: 2px solid rgba(255,255,255,0.2);
+	border-radius: 5px;
+	background-color: transparent;
+	color: white;
+	padding: 20px;
+	width: 80px;
+}
+ 
+.choose_button_blue:hover{
+	background-color: #3498DB;
+	box-shadow: 0 0 30px #3498DB;
+	cursor: url(../images/hammer.png), default;
+}
+
+.choose_button_yellow{
+	font-family: 'Arial';
+	font-size: 20px;
+	border: 2px solid rgba(255,255,255,0.2);
+	border-radius: 5px;
+	background-color: transparent;
+	color: white;
+	padding: 20px;
+	width: 80px;
+}
+ 
+.choose_button_yellow:hover{
+	background-color: #FFD34E;
+	box-shadow: 0 0 30px #FFD34E;
+	cursor: url(../images/hammer.png), default;
+}
+
+.choose_button_red{
+	font-family: 'Arial';
+	font-size: 20px;
+	border: 2px solid rgba(255,255,255,0.2);
+	border-radius: 5px;
+	background-color: transparent;
+	color: white;
+	padding: 20px;
+	width: 80px;
+}
+ 
+.choose_button_red:hover{
+	background-color: #E74C3C;
+	box-shadow: 0 0 30px #E74C3C;
+	cursor: url(../images/hammer.png), default;
+}
+
+.button{
+	font-family: 'Arial';
+	font-size: 20px;
+	border: 2px solid rgba(255,255,255,0.2);
+	border-radius: 5px;
+	background-color: transparent;
+	color: white;
+	padding: 20px;
+}
+
+.button:hover{
+	background-color: #3498DB;
+	box-shadow: 0 0 30px #3498DB;
+	cursor: url(../images/hammer.png), default;
+}
+
+.button_red{
+	font-family: 'Arial';
+	font-size: 20px;
+	border: 2px solid rgba(255,255,255,0.2);
+	border-radius: 5px;
+	background-color: transparent;
+	color: white;
+	padding: 20px;
+}
+
+.button_red:hover{
+	background-color: #E74C3C;
+	box-shadow: 0 0 30px #E74C3C;
+	cursor: url(../images/hammer.png), default;
+}
+
+.button_blue{
+	font-family: 'Arial';
+	font-size: 20px;
+	border: 2px solid #2C3E50;
+	border-radius: 5px;
+	background-color: transparent;
+	color: #2C3E50;
+	padding: 20px;
+}
+
+.button_blue:hover{
+	background-color: #2C3E50;
+	color: white;
+	cursor: url(../images/hammer.png), default;
+}
+
+.button_transparent{
+	font-family: 'Arial';
+	font-size: 20px;
+	border: none;
+	background-color: transparent;
+	color: #2C3E50;
+}
+
+.button_transparent:hover{
+	cursor: url(../images/hammer.png), default;
+}
+
+.team_win{
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100px;
+	height: 100px;
+	background-size: cover;
+}

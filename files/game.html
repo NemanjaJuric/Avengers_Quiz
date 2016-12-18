@@ -1,0 +1,578 @@
+<div class = "game_wrapper">
+
+	<div class = "game_heading">
+		<img src = "images/shield_logo.png" width="100px">
+		<br>
+		<br>
+		Avengers kviz
+		<br>
+		<br>
+	</div>
+
+	<div class = "top_game_buttons">
+
+		<button class = "button music_button"><span class = "glyphicon glyphicon-volume-up"></span></button>
+
+		<button class = "button_red" id = "exit_button_modal">Izađi</button>
+
+	</div>
+
+	<div class = "team_on_turn_div"></div>
+
+	<div class = "team_on_turn_name"></div>
+
+	<div class = "boss_div"></div>
+
+	<div class = "change_points_wrapper">
+
+		Promena poena
+
+		<br>
+		<br>
+
+		<img src = "images/iron_man.png" width = "60px"></span><input type = "text" class = "team_name" id = "team1_points" placeholder="0-10">
+		<button class = "button" id = "team1_points_button">OK</button>
+
+		<br>
+		<br>
+
+		<img src = "images/captain_america.png" width = "60px"><input type = "text" class = "team_name" id = "team2_points" placeholder="0-10">
+		<button class = "button" id = "team2_points_button">OK</button>
+
+		<br>
+		<br>
+
+		<img src = "images/hulk.png" width = "60px"></span><input type = "text" class = "team_name" id = "team3_points" placeholder="0-10">
+		<button class = "button" id = "team3_points_button">OK</button>
+
+		<br>
+		<br>
+
+		<button class = "button_red" id = "exit_change_points">Nazad</button>
+
+	</div>
+
+	<div class = "row">
+		<div class = "col-sm-3 game_left">
+			<img src = "images/iron_man.png" width = "60px"><span id = "team1"></span>
+			<br>
+			<br>
+			<br>
+			<img src = "images/captain_america.png" width = "60px"><span id = "team2"></span>
+			<br>
+			<br>
+			<br>
+			<img src = "images/hulk.png" width = "60px"><span id = "team3"></span>
+		</div>
+		<div class = "col-sm-9">
+			<table class = "line_team1">
+				<tr>
+					<td class = "td_team1" width="60" height = "60"></td>
+					<td class = "td_team1" width="60" height = "60"></td>
+					<td class = "td_team1" width="60" height = "60"></td>
+					<td class = "td_team1" width="60" height = "60"></td>
+					<td class = "td_team1" width="60" height = "60"></td>
+					<td class = "td_team1" width="60" height = "60"></td>
+					<td class = "td_team1" width="60" height = "60"></td>
+					<td class = "td_team1" width="60" height = "60"></td>
+					<td class = "td_team1" width="60" height = "60"></td>
+					<td class = "td_team1" width="60" height = "60"></td>
+				</tr>
+			</table>
+			<br>
+			<table class = "line_team2">
+				<tr>
+					<td class = "td_team2" width="60" height = "60"></td>
+					<td class = "td_team2" width="60" height = "60"></td>
+					<td class = "td_team2" width="60" height = "60"></td>
+					<td class = "td_team2" width="60" height = "60"></td>
+					<td class = "td_team2" width="60" height = "60"></td>
+					<td class = "td_team2" width="60" height = "60"></td>
+					<td class = "td_team2" width="60" height = "60"></td>
+					<td class = "td_team2" width="60" height = "60"></td>
+					<td class = "td_team2" width="60" height = "60"></td>
+					<td class = "td_team2" width="60" height = "60"></td>
+				</tr>
+			</table>
+			<br>
+			<table class = "line_team3">
+				<tr>
+					<td class = "td_team3" width="60" height = "60"></td>
+					<td class = "td_team3" width="60" height = "60"></td>
+					<td class = "td_team3" width="60" height = "60"></td>
+					<td class = "td_team3" width="60" height = "60"></td>
+					<td class = "td_team3" width="60" height = "60"></td>
+					<td class = "td_team3" width="60" height = "60"></td>
+					<td class = "td_team3" width="60" height = "60"></td>
+					<td class = "td_team3" width="60" height = "60"></td>
+					<td class = "td_team3" width="60" height = "60"></td>
+					<td class = "td_team3" width="60" height = "60"></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div class = "bottom_game_buttons">
+
+		<button class = "button" id = "biraj_zadatak">Izaberi zadatak</button>
+
+	</div>
+
+	<div class = "zadatak_wrapper">
+
+		<div class = "countdown" id="countdown"></div>
+
+		<div class = "zadatak_div">
+
+			<div class = "zadatak_text">
+
+			</div>
+
+		</div>
+
+		<div class = "resenje_div">
+
+			Rešenje: 
+
+			<input type = "text" class = "input_odgovor" id = "input_odgovor"></input>
+
+			<button class = "button_blue" id = "proveri_resenje_button"><span class = "glyphicon glyphicon-ok"></span></button>
+
+		</div>
+
+	</div>
+
+	<div class = "biraj_zadatak_wrapper">
+
+		<span style = "font-size: 40px;">Zadaci</span>
+
+		<br>
+		<br>
+
+		Zadaci za 1 poen
+
+		<br>
+		<br>
+		
+		<button class = "choose_button choose_button_blue">1</button>
+		<button class = "choose_button choose_button_blue">2</button>
+		<button class = "choose_button choose_button_blue">3</button>
+		<button class = "choose_button choose_button_blue">4</button>
+		<button class = "choose_button choose_button_blue">5</button>
+		<button class = "choose_button choose_button_blue">6</button>
+		<button class = "choose_button choose_button_blue">7</button>
+		<button class = "choose_button choose_button_blue">8</button>
+
+		<br>
+		<br>
+
+		Zadaci za 2 poena
+
+		<br>
+		<br>
+		
+		<button class = "choose_button choose_button_yellow">9</button>
+		<button class = "choose_button choose_button_yellow">10</button>
+		<button class = "choose_button choose_button_yellow">11</button>
+		<button class = "choose_button choose_button_yellow">12</button>
+		<button class = "choose_button choose_button_yellow">13</button>
+		<button class = "choose_button choose_button_yellow">14</button>
+		<button class = "choose_button choose_button_yellow">15</button>
+		<button class = "choose_button choose_button_yellow">16</button>
+
+		<br>
+		<br>
+
+		Zadaci za 3 poena
+
+		<br>
+		<br>
+		
+		<button class = "choose_button choose_button_red">17</button>
+		<button class = "choose_button choose_button_red">18</button>
+		<button class = "choose_button choose_button_red">19</button>
+		<button class = "choose_button choose_button_red">20</button>
+		<button class = "choose_button choose_button_red">21</button>
+		<button class = "choose_button choose_button_red">22</button>
+		<button class = "choose_button choose_button_red">23</button>
+		<button class = "choose_button choose_button_red">24</button>
+
+		<br>
+		<br>
+
+		<button class = "button_red" id = "izadji">Nazad</button>
+
+	</div>
+
+</div> 
+
+<audio id = "beep">
+  	<source src="sound/beep.mp3" type="audio/mpeg">
+</audio>
+
+<script type="text/javascript">
+	
+	$("#team1").html(localStorage.getItem("iron_man_team_name"));
+
+	$("#team2").html(localStorage.getItem("captain_america_team_name"));
+
+	$("#team3").html(localStorage.getItem("hulk_team_name"));
+
+	$("#proveri_resenje_button").click(function(){
+		proveri_resenje(broj_zadatka);
+	})
+
+	$(document).ready(function(){
+		change_current_team(0);
+		change_team_on_turn(0);
+
+		time = parseInt(localStorage.getItem("time"));
+
+		countdown =  $("#countdown").countdown360({
+       		radius: 40,
+        	seconds: time,
+        	fontColor: '#FFFFFF',
+        	fontSize: 40,
+        	fillStyle: "transparent",
+        	strokeStyle: "#FFD34E",
+        	strokeWidth: 5,
+        	label: "none",
+        	autostart: false,
+        	onComplete: function () { 
+        		$(".next_team").click(); 
+        		$("#modal_time").modal("show");
+        	}
+		});
+	})
+
+	$(".music_button").click(function(){
+		music_ind = localStorage.getItem("music_ind");
+		if(music_ind == null){
+			document.getElementById('music').pause();
+			music_ind = 0;
+			localStorage.setItem("music_ind", music_ind);
+		}
+		if(music_ind == 1){
+			document.getElementById('music').pause();
+			music_ind = 0;
+			localStorage.setItem("music_ind", music_ind);
+		}else{
+			document.getElementById('music').play();
+			music_ind = 1;
+			localStorage.setItem("music_ind", music_ind);
+		}
+	})
+
+	$("#exit_button").click(function(){
+		$(".wrapper").load("files/home.html");
+		$("#modal_exit").modal('hide');
+	})
+
+	$("#exit_button_modal").click(function(){
+		$("#modal_exit").modal('show');
+	})
+
+	$("#input_odgovor").keydown(function(e){
+		if(e.which == 13){
+			proveri_resenje(broj_zadatka);
+			e.preventDefault();
+		}
+	})
+
+	$("#biraj_zadatak").click(function(){
+		$(".biraj_zadatak_wrapper").fadeIn(300);
+	})
+
+	$("#izadji").click(function(){
+		$(".biraj_zadatak_wrapper").fadeOut(300);
+	})
+
+	$(".boss_div").click(function(){
+		$(".change_points_wrapper").fadeIn(300);
+		$("#team1_points").val("");
+		$("#team2_points").val("");
+		$("#team3_points").val("");
+	})
+
+	$("#team1_points_button").click(function(){
+		poeni_tim[0] = parseInt($("#team1_points").val());
+		postavi_figuru(poeni_tim[0], 0);
+		$(".change_points_wrapper").fadeOut(300);
+	})
+
+	$("#team2_points_button").click(function(){
+		poeni_tim[1] = parseInt($("#team2_points").val());
+		postavi_figuru(poeni_tim[1], 1);
+		$(".change_points_wrapper").fadeOut(300);
+	})
+
+	$("#team3_points_button").click(function(){
+		poeni_tim[2] = parseInt($("#team3_points").val());
+		postavi_figuru(poeni_tim[2], 2);
+		$(".change_points_wrapper").fadeOut(300);
+	})
+
+	$("#exit_change_points").click(function(){
+		$(".change_points_wrapper").fadeOut(300);
+	})
+
+	$(".choose_button").click(function(){
+
+		broj_zadatka = parseInt($(this).html());
+
+		$(this).prop('disabled', true);
+		$(this).css('background-color', "gray");
+
+		$(".biraj_zadatak_wrapper").fadeOut(300);
+		$(".zadatak_wrapper").fadeIn(300);
+		$(".zadatak_text").html(localStorage.getItem("zadatak[" + broj_zadatka + "]"));
+		$("#input_odgovor").val("");
+		$("#input_odgovor").focus();
+
+		countdown.start();
+
+		if(broj_zadatka <= 8){
+			poeni = parseInt(1);
+		}
+		if(broj_zadatka > 8 && broj_zadatka <= 16){
+			poeni = parseInt(2);
+		}
+		if(broj_zadatka > 16 && broj_zadatka <= 24){
+			poeni = parseInt(3);
+		}
+	})
+
+	var current_team = 0, team_on_turn = 0;
+
+	var number_of_changes = 0;
+
+	var broj_zadatka, poeni;
+
+	var poeni_tim = [0,0,0];
+
+	var countdown;
+
+	var time;
+
+	function proveri_resenje(broj_zadatka){
+
+		var odgovor = $("#input_odgovor").val().trim();
+		var broj_resenja = broj_zadatka + 24;
+		var tacan_odgovor = localStorage.getItem("resenje[" + broj_resenja + "]").trim();
+
+		countdown.stop();
+
+		if(odgovor == tacan_odgovor){
+
+			$("#modal_tacno").modal('show');
+
+			current_team = parseInt(current_team);
+
+			poeni_tim[current_team] += poeni;
+
+			postavi_figuru(poeni_tim[current_team], current_team);
+
+		}else{
+
+			$("#modal_netacno").modal('show');
+
+		}
+
+	}
+
+	function reset_polja(tim){
+		if(tim == 0){
+				for(i = 0; i < 10; i++){
+					$(".td_team1").eq(i).css("background-color", "transparent");
+					$(".td_team1").eq(i).css("box-shadow", "none");
+					$(".td_team1").eq(i).attr("background", "");
+				}
+			}
+
+			if(tim == 1){
+				for(i = 0; i < 10; i++){
+					$(".td_team2").eq(i).css("background-color", "transparent");
+					$(".td_team2").eq(i).css("box-shadow", "none");
+					$(".td_team2").eq(i).attr("background", "");
+				}
+			}
+
+			if(tim == 2){
+				for(i = 0; i < 10; i++){
+					$(".td_team3").eq(i).css("background-color", "transparent");
+					$(".td_team3").eq(i).css("box-shadow", "none");
+					$(".td_team3").eq(i).attr("background", "");
+				}
+			}
+	}
+
+	function postavi_figuru(poeni, tim){
+
+		poeni = parseInt(poeni);
+		tim = parseInt(tim);
+
+		reset_polja(tim);
+
+		if(poeni < 1){
+			reset_polja(tim);
+			return;
+		}
+
+		if(poeni >= 10){
+
+			setTimeout(function(){$("#modal_pobeda").modal('show');}, 3000);
+
+			switch(current_team){
+				case 0:
+					$(".team_win").css("background-image", "url('images/iron_man.png')");
+					break;
+				case 1:
+					$(".team_win").css("background-image", "url('images/captain_america.png')");
+					break;
+				case 2:
+					$(".team_win").css("background-image", "url('images/hulk.png')");
+					break;
+			}
+
+			$("#biraj_zadatak").prop('disabled', true);
+
+			if(tim == 0){
+				for(i = 0; i < 9; i++){
+					$(".td_team1").eq(i).css("background-color", "#E74C3C");
+					$(".td_team1").eq(i).css("box-shadow", "0 0 30px #E74C3C");
+					$(".td_team1").eq(i).attr("background", "");
+				}
+				$(".td_team1").eq(9).attr("background", "images/iron_man.png");
+			}
+
+			if(tim == 1){
+				for(i = 0; i < 9; i++){
+					$(".td_team2").eq(i).css("background-color", "#3498DB");
+					$(".td_team2").eq(i).css("box-shadow", "0 0 30px #3498DB");
+					$(".td_team2").eq(i).attr("background", "");
+				}
+				$(".td_team2").eq(9).attr("background", "images/captain_america.png");
+			}
+
+			if(tim == 2){
+				for(i = 0; i < 9; i++){
+					$(".td_team3").eq(i).css("background-color", "#10AD06");
+					$(".td_team3").eq(i).css("box-shadow", "0 0 30px #10AD06");
+					$(".td_team3").eq(i).attr("background", "");
+				}
+				$(".td_team3").eq(9).attr("background", "images/hulk.png");
+			}
+		}else{
+
+			if(tim == 0){
+				for(i = 0; i < poeni-1; i++){
+					$(".td_team1").eq(i).css("background-color", "#E74C3C");
+					$(".td_team1").eq(i).css("box-shadow", "0 0 30px #E74C3C");
+					$(".td_team1").eq(i).attr("background", "");
+				}
+				$(".td_team1").eq(poeni-1).attr("background", "images/iron_man.png");
+			}
+
+			if(tim == 1){
+				for(i = 0; i < poeni-1; i++){
+					$(".td_team2").eq(i).css("background-color", "#3498DB");
+					$(".td_team2").eq(i).css("box-shadow", "0 0 30px #3498DB");
+					$(".td_team2").eq(i).attr("background", "");
+				}
+				$(".td_team2").eq(poeni-1).attr("background", "images/captain_america.png");
+			}
+
+			if(tim == 2){
+				for(i = 0; i < poeni-1; i++){
+					$(".td_team3").eq(i).css("background-color", "#10AD06");
+					$(".td_team3").eq(i).css("box-shadow", "0 0 30px #10AD06");
+					$(".td_team3").eq(i).attr("background", "");
+				}
+				$(".td_team3").eq(poeni-1).attr("background", "images/hulk.png");
+			}
+
+		}
+
+	}
+
+	$(".next_team").click(function(){
+		if (number_of_changes == 2){
+
+			team_on_turn = (team_on_turn + 1) % 3;
+			current_team = team_on_turn;
+			number_of_changes = 0;
+			change_team_on_turn(team_on_turn);
+			$("#modal_tacno").modal('hide');
+			$("#modal_netacno").modal('hide');
+			$(".zadatak_wrapper").fadeOut(300);
+
+		}else{
+
+			current_team = (current_team + 1) % 3;
+			change_current_team(current_team); 
+			number_of_changes += 1;
+			$("#modal_tacno").modal('hide');
+			$("#modal_netacno").modal('hide');
+			$("#input_odgovor").val("");
+			$("#input_odgovor").focus();
+
+		}
+	})
+
+	$(".next_round").click(function(){
+		team_on_turn = (team_on_turn + 1) % 3;
+		current_team = team_on_turn;
+		number_of_changes = 0;
+		change_team_on_turn(team_on_turn);
+		$("#modal_tacno").modal('hide');
+		$("#modal_netacno").modal('hide');
+		$(".zadatak_wrapper").fadeOut(300);
+	})
+
+	function change_current_team(current_team){
+		switch(current_team){
+			case 0:
+				$(".team_on_turn_div").css("background-image", "url('images/iron_man.png')");
+				$(".team_on_turn_div").css("border", "2px solid #E74C3C");
+				$(".team_on_turn_div").css("box-shadow", "0 0 30px #E74C3C");
+				$(".team_on_turn_name").html(localStorage.getItem("iron_man_team_name"));
+				break;
+			case 1:
+				$(".team_on_turn_div").css("background-image", "url('images/captain_america.png')");
+				$(".team_on_turn_div").css("border", "2px solid #2980B9");
+				$(".team_on_turn_div").css("box-shadow", "0 0 30px #2980B9");
+				$(".team_on_turn_name").html(localStorage.getItem("captain_america_team_name"));
+				break;
+			case 2:
+				$(".team_on_turn_div").css("background-image", "url('images/hulk.png')");
+				$(".team_on_turn_div").css("border", "2px solid #10AD06");
+				$(".team_on_turn_div").css("box-shadow", "0 0 30px #10AD06");
+				$(".team_on_turn_name").html(localStorage.getItem("hulk_team_name"));
+				break;
+		}
+	}
+
+	function change_team_on_turn(team_on_turn){
+		switch(team_on_turn){
+			case 0:
+				$(".team_on_turn_div").css("background-image", "url('images/iron_man.png')");
+				$(".team_on_turn_div").css("border", "2px solid #E74C3C");
+				$(".team_on_turn_div").css("box-shadow", "0 0 30px #E74C3C");
+				$(".team_on_turn_name").html(localStorage.getItem("iron_man_team_name"));
+				break;
+			case 1:
+				$(".team_on_turn_div").css("background-image", "url('images/captain_america.png')");
+				$(".team_on_turn_div").css("border", "2px solid #2980B9");
+				$(".team_on_turn_div").css("box-shadow", "0 0 30px #2980B9");
+				$(".team_on_turn_name").html(localStorage.getItem("captain_america_team_name"));
+				break;
+			case 2:
+				$(".team_on_turn_div").css("background-image", "url('images/hulk.png')");
+				$(".team_on_turn_div").css("border", "2px solid #10AD06");
+				$(".team_on_turn_div").css("box-shadow", "0 0 30px #10AD06");
+				$(".team_on_turn_name").html(localStorage.getItem("hulk_team_name"));
+				break;
+		}
+	}
+
+</script>

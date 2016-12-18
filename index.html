@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<title>Avengers kviz</title>
+
+    <meta charset="utf-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=0.5">
+	<meta name="theme-color" content="#2C3E50">
+	<meta name="msapplication-navbutton-color" content="#2C3E50">
+
+    <link rel = "stylesheet" type = "text/css" href = "css/style.css">
+    <link rel="icon" sizes="192x192" href="images/avengers_logo.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	
+
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <script src="javascript/jquery.countdown360.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>	
+
+	<div class = "wrapper"></div>
+
+<div class="modal fade" id="modal_tacno" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+        	Tačno!
+        	<br>
+        	<br>
+        	<button class = "button_blue next_round">Nazad na polje</button>
+        </div>
+	</div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_netacno" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+        	Netačno!
+        	<br>
+        	<br>
+        	<button class = "button_blue next_team">Sledeći tim</button>
+        </div>
+	</div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_pobeda" role="dialog">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+        	<div class = "team_win"></div>
+        	Pobeda!
+        </div>
+	</div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_exit" role="dialog">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body" style = "font-size: 24px">
+        	Da li ste sigurni da želite da napustite igru?
+        	<br>
+        	Igra neće biti sačuvana.
+        	<br>
+        	<br>
+        	<button class = "button_blue" id = "exit_button">Izađi</button>
+        </div>
+	</div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_time" role="dialog">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body" style = "font-size: 24px">
+        	<img src = "images/fury.png" width = "100px">
+        	<br>
+        	<br>
+        	Vreme je isteklo!
+        	<br>
+        </div>
+	</div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_help" role="dialog">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body" style = "font-size: 20px">
+        	Kliknite IZABERI i selektujte zadatke i rešenja da biste ih učitali u kviz.
+			<br>
+			<br>
+			Zadaci i rešenja su u txt formatu. Neophodno je imati 24 txt fajla sa imenima 1-24 u kojima su tekstovi 
+			zadataka i 24 fajla u kojima su tekstovi rešenja sa imenima 25-48. Zadatku pod nazivom x odgovara rešenje 
+			pod nazivom x+24. Koristite prečicu na tastaturi <b>Ctrl + A</b> da biste ih selektovali sve. 
+			<br>
+			<br>
+			Pritiskom na F12 mozete pogledati da li su se pitanja i odgovori ucitali
+			pravilnim redom. Ukoliko nisu, učitajte ih ponovo.
+			<br>
+			<br>
+			Nepopunjene txt fajlove možete skinuti <a href = "zadaci/zadaci.zip">ovde</a>.
+			<br>
+			<br>
+			Kliknite na NOVA IGRA da biste započeli kviz.
+        </div>
+	</div>
+    </div>
+</div>
+
+<audio id = "music" autoplay loop>
+  	<source src="sound/music.mp3" type="audio/mpeg">
+</audio>
+
+</body>
+
+<script>
+
+	$(".wrapper").load("files/home.html");
+
+	$(document).ready(function(){
+		music_ind = localStorage.getItem("music_ind");
+		console.log(music_ind);
+		if(music_ind == 0){
+			document.getElementById('music').pause();
+			music_ind = 0;
+			localStorage.setItem("music_ind", music_ind);
+		}else{
+			document.getElementById('music').play();
+			music_ind = 1;
+			localStorage.setItem("music_ind", music_ind);
+		}
+	})
+
+</script>
+
+</html>

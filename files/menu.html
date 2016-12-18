@@ -1,0 +1,222 @@
+<script type="text/javascript">
+
+	var ind_pitanja = 1;
+    	
+    function handle_files(files) {
+
+    	var zadatak = [50];
+    	var resenje = [50];
+    	var j = 1;
+
+  		for (i = 0; i < files.length; i++) {
+    		file = files[i];
+    		var reader = new FileReader();
+    		reader.onload = function(e) {
+      			if( j > 24){
+      				console.log(e.target.result);
+      				localStorage.setItem("resenje[" + j + "]", e.target.result);
+      				j++;
+      			}else{
+      				console.log(e.target.result);
+      				localStorage.setItem("zadatak[" + j + "]", e.target.result);
+      				j++;
+      			}
+      			ind_pitanja = ind_pitanja * 1;
+    		}
+    		reader.onerror = function(){
+      			ind_pitanja = 0;
+    		}
+   			reader.readAsText(file);
+  		}
+
+  		if(files.length == 48 && ind_pitanja == 1){
+  			$(".input_file_status").html("<span class = 'glyphicon glyphicon-ok'></span>");
+  			$("#new_game_button").prop("disabled", false);
+  		}else{
+  			$(".input_file_status").html("<span class = 'glyphicon glyphicon-remove'></span>");
+  			$("#new_game_button").prop("disabled", true);
+  		}
+
+	}
+
+	$("#input_file").click(function(){
+		$("#input_file_hidden").click();
+	});
+
+	var iron_man_team_name;
+
+	var captain_america_team_name;
+
+	var hulk_team_name;
+
+	$("#iron_man_team_name_button").click(function(){
+		iron_man_team_name = $("#iron_man_team_name").val();
+		$("#iron_man_team_name").prop('disabled', true);
+		$("#iron_man_team_name").css('color', "#bdbdbd");
+		localStorage.setItem("iron_man_team_name", iron_man_team_name);
+	});
+
+	$("#iron_man_team_name_button_x").click(function(){
+		iron_man_team_name = $("#iron_man_team_name").val();
+		$("#iron_man_team_name").prop('disabled', false);
+		$("#iron_man_team_name").css('color', "white");
+		localStorage.setItem("iron_man_team_name", iron_man_team_name);
+	});
+
+	$("#captain_america_team_name_button").click(function(){
+		captain_america_team_name = $("#captain_america_team_name").val();
+		$("#captain_america_team_name").prop('disabled', true);
+		$("#captain_america_team_name").css('color', "#bdbdbd");
+		localStorage.setItem("captain_america_team_name", captain_america_team_name);
+	});
+
+	$("#captain_america_team_name_button_x").click(function(){
+		captain_america_team_name = $("#captain_america_team_name").val();
+		$("#captain_america_team_name").prop('disabled', false);
+		$("#captain_america_team_name").css('color', "white");
+		localStorage.setItem("captain_america_team_name", captain_america_team_name);
+	});
+
+	$("#hulk_team_name_button").click(function(){
+		hulk_team_name = $("#hulk_team_name").val();
+		$("#hulk_team_name").prop('disabled', true);
+		$("#hulk_team_name").css('color', "#bdbdbd");
+		localStorage.setItem("hulk_team_name", hulk_team_name);
+	});
+
+	$("#hulk_team_name_button_x").click(function(){
+		hulk_team_name = $("#hulk_team_name").val();
+		$("#hulk_team_name").prop('disabled', false);
+		$("#hulk_team_name").css('color', "white");
+		localStorage.setItem("hulk_team_name", hulk_team_name);
+	});
+
+	$("#new_game_button").click(function(){
+		$(".wrapper").load("files/game.html");
+	})
+
+	$("#exit_button").click(function(){
+		$(".wrapper").load("files/home.html");
+	})
+
+	$("#help_button").click(function(){
+		$("#modal_help").modal("show");
+	})
+
+	$("#time_input_button").click(function(){
+		localStorage.setItem("time", $("#time_input").val());
+		$("#time_input").prop('disabled', true);
+		$("#time_input").css('color', "#bdbdbd");
+	})
+
+	$("#time_input_button_x").click(function(){
+		localStorage.setItem("time", $("#time_input").val());
+		$("#time_input").prop('disabled', false);
+		$("#time_input").css('color', "white");
+	})
+
+	$(".music_button").click(function(){
+		music_ind = localStorage.getItem("music_ind");
+		if(music_ind == null){
+			document.getElementById('music').pause();
+			music_ind = 0;
+			localStorage.setItem("music_ind", music_ind);
+		}
+		if(music_ind == 1){
+			document.getElementById('music').pause();
+			music_ind = 0;
+			localStorage.setItem("music_ind", music_ind);
+		}else{
+			document.getElementById('music').play();
+			music_ind = 1;
+			localStorage.setItem("music_ind", music_ind);
+		}
+	})
+
+</script>
+
+<div class = "menu_wrapper">
+
+<div class = "row" style = "text-align: center;">
+
+	<img src = "images/shield_logo.png" width="100px">
+	<br>
+	<br>
+	meni
+	<br>
+	<br>
+
+	<div class = "col-md-6">
+
+		<div class = "menu_pane">
+
+		Avengers timovi
+
+		<br>
+		<br>
+
+		<img src = "images/iron_man.png" width = "60px">
+		<input type = "text" class = "team_name" id = "iron_man_team_name" placeholder="tim 1">
+		<button class = "button" id = "iron_man_team_name_button"><span class = "glyphicon glyphicon-ok"></span></button>
+		<button class = "button_red" id = "iron_man_team_name_button_x"><span class = "glyphicon glyphicon-remove"></span></button>
+
+		<br>
+		<br>
+
+		<img src = "images/captain_america.png" width = "60px">
+		<input type = "text" class = "team_name" id = "captain_america_team_name" placeholder="tim 2">
+		<button class = "button" id = "captain_america_team_name_button"><span class = "glyphicon glyphicon-ok"></span></button>
+		<button class = "button_red" id = "captain_america_team_name_button_x"><span class = "glyphicon glyphicon-remove"></span></button>
+
+		<br>
+		<br>
+
+		<img src = "images/hulk.png" width = "60px">
+		<input type = "text" class = "team_name" id = "hulk_team_name" placeholder="tim 3">
+		<button class = "button" id = "hulk_team_name_button"><span class = "glyphicon glyphicon-ok"></span></button>
+		<button class = "button_red" id = "hulk_team_name_button_x"><span class = "glyphicon glyphicon-remove"></span></button>
+
+		</div>
+		
+	</div>
+
+	<div class = "col-md-6">
+
+		<div class = "menu_pane">
+
+		zadaci
+
+		<br>
+		<br>
+
+		<button class = "button" id = "input_file">Izaberi</button>
+
+		<span class = "input_file_status"></span>
+
+		<input type="file" multiple onchange="handle_files(this.files)" id = "input_file_hidden" style = "display: none">
+
+		<button class = "button" id = "help_button">Pomoć</button>
+
+		<button class = "button music_button"><span class = "glyphicon glyphicon-volume-up"></span></button>
+
+		<br>
+		<br>
+
+		<input type = "text" class = "team_name" id = "time_input" placeholder= "vreme">
+
+		<button class = "button" id = "time_input_button"><span class = "glyphicon glyphicon-ok"></span></button>
+		<button class = "button_red" id = "time_input_button_x"><span class = "glyphicon glyphicon-remove"></span></button>
+
+		<br>
+		<br>
+
+		<button class = "button" id = "new_game_button">Nova igra</button>
+
+		<button class = "button_red" id = "exit_button">Nazad</button>
+
+		</div>
+		
+	</div>
+
+</div>
+</div>
