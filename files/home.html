@@ -8,7 +8,7 @@
 		Avengers
 	</div>
 	<div class = "godina">
-		&copy; 2016
+		&copy; <span id="godina"></span>
 	</div>
 	<div class = "autor">
 		Nemanja Juric
@@ -21,5 +21,7 @@
 	$("#start_button").click(function(){
 		$(".wrapper").load("files/menu.html");
 	})
+	var date = new Date();
+	$("#godina").html(date.getFullYear())
 
 </script>
