@@ -17,11 +17,12 @@
     		var reader = new FileReader();
     		reader.onload = function(e) {
       			if( j > 24){
-      				console.log(e.target.result);
+					var k = j - 24;
+      				console.log('Resenje ' + k + ':', e.target.result);
       				localStorage.setItem("resenje[" + j + "]", e.target.result);
       				j++;
       			}else{
-      				console.log(e.target.result);
+      				console.log('Zadatak ' + j + ':', e.target.result);
       				localStorage.setItem("zadatak[" + j + "]", e.target.result);
       				j++;
       			}

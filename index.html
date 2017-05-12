@@ -64,21 +64,6 @@
     </div>
 </div>
 
-<div class="modal fade" id="modal_exit" role="dialog">
-    <div class="modal-dialog">
-    <div class="modal-content">
-        <div class="modal-body" style = "font-size: 24px">
-        	Da li ste sigurni da želite da napustite igru?
-        	<br>
-        	Igra neće biti sačuvana.
-        	<br>
-        	<br>
-        	<button class = "button_blue" id = "exit_button">Izađi</button>
-        </div>
-	</div>
-    </div>
-</div>
-
 <div class="modal fade" id="modal_time" role="dialog">
     <div class="modal-dialog">
     <div class="modal-content">
@@ -189,7 +174,6 @@
 
 	function login(mail){
 		$.get('php/login.php', {mail: mail}).then(function(res){
-			console.log('1res', res);
 			if(res === 'ok'){
 				$(".wrapper").load("files/password.html");
 			}else if(res === 'no'){
@@ -202,7 +186,6 @@
 
 	function checkUser(password) {
 		$.get('php/login.php', { password: password }).then(function (res) {
-			console.log('2res', res);
 			if (res === 'ok') {
 				$(".wrapper").load("files/home.html");
 			}else{
