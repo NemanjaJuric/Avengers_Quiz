@@ -133,6 +133,21 @@
     </div>
 </div>
 
+<div class="modal fade" id="no_user" role="dialog">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body" style = "font-size: 24px">
+        	<img src = "images/fury.png" width = "100px">
+        	<br>
+        	<br>
+        	Korisnik ne postoji!
+        	<br>
+        	<br>
+        </div>
+	</div>
+    </div>
+</div>
+
 <audio id = "music" autoplay loop>
   	<source src="sound/music.mp3" type="audio/mpeg">
 </audio>
@@ -154,7 +169,47 @@
 			music_ind = 1;
 			localStorage.setItem("music_ind", music_ind);
 		}
+		var cookie = getCookieValue();
+		checkUser(cookie);
 	})
+
+	function getCookieValue() {
+		var cookieName;
+		var cookieValue;
+		var cookies = document.cookie.split(';');
+		cookies.forEach(function (cookie) {
+			var cookieParts = cookie.split('=');
+			if (cookieParts[0].trim() === 'avengers') {
+				cookieName = cookieParts[0].trim();
+				cookieValue = cookieParts[1].trim();
+			}
+		})
+		return cookieValue;
+	}
+
+	function login(mail){
+		$.get('php/login.php', {mail: mail}).then(function(res){
+			console.log('1res', res);
+			if(res === 'ok'){
+				$(".wrapper").load("files/password.html");
+			}else if(res === 'no'){
+				$("#no_user").modal('show');				
+			}else{
+				$(".wrapper").load("files/login.html");								
+			}
+		})
+	}
+
+	function checkUser(password) {
+		$.get('php/login.php', { password: password }).then(function (res) {
+			console.log('2res', res);
+			if (res === 'ok') {
+				$(".wrapper").load("files/home.html");
+			}else{
+				$(".wrapper").load("files/login.html");
+			}
+		})
+	}
 
 </script>
 

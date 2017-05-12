@@ -455,3 +455,8 @@ td:nth-child(10n + 10){
 	height: 100px;
 	background-size: cover;
 }
+
+.text-small-input{
+	font-size: 20px;
+	letter-spacing: 0px;
+}
