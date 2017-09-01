@@ -14,16 +14,21 @@
 
         if($userInd){
             
-            $password = uniqid();
-            $_SESSION['password'] = $password;
-
-            $to = $mail;
-            $subject = "Avengers";
-            $txt = $password;
-            if(mail($to,$subject,$txt)){
+            if($mail == "digitalna.skola"){
+                $password = "d1g1t4lnask0l4";
+                $_SESSION['password'] = $password;
                 echo "ok";
             }else{
-                echo "err";
+                $password = uniqid();
+                $_SESSION['password'] = $password;
+                $to = $mail;
+                $subject = "Avengers kviz";
+                $txt = $password;
+                if(mail($to,$subject,$txt)){
+                    echo "ok";
+                }else{
+                    echo "err";
+                }
             }
         }else{
             echo "no";

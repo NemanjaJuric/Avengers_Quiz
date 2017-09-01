@@ -189,7 +189,6 @@
 
 	function login(mail){
 		$.get('php/login.php', {mail: mail}).then(function(res){
-			console.log('1res', res);
 			if(res === 'ok'){
 				$(".wrapper").load("files/password.html");
 			}else if(res === 'no'){
@@ -202,7 +201,6 @@
 
 	function checkUser(password) {
 		$.get('php/login.php', { password: password }).then(function (res) {
-			console.log('2res', res);
 			if (res === 'ok') {
 				$(".wrapper").load("files/home.html");
 			}else{
